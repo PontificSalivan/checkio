@@ -1,17 +1,17 @@
 def checkio(data: str) -> bool:
 
-    gate1 = False
-    gate2 = False
-    gate3 = False
+    gate1 = False 
+    gate2 = False 
+    gate3 = False 
 
     for char in data:
-        if char.isdigit() and gate1 == False:
+        if char.isdigit() and gate1 == False: # Проверка на цифры
             gate1 = True
 
-        if char.isupper() and gate2 == False:
+        if char.isupper() and gate2 == False: # Проверка на заглавные
             gate2 = True
 
-        if char.islower() and gate3 == False:
+        if char.islower() and gate3 == False: # Проверка на прописные
             gate3 = True
 
     if gate1 and gate2 and gate3 and len(data) >= 10:

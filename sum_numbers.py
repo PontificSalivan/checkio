@@ -2,6 +2,8 @@ def sum_numbers(text: str) -> int:
     answer= 0
     string = ''
     lst = list()
+
+    #Разбиваемт текст на подтексты, основываясь на пробелах
     for char in text:
         if char == ' ':
             lst.append(string)
@@ -10,7 +12,8 @@ def sum_numbers(text: str) -> int:
             string += ''.join(char)
         
     lst.append(string)
-
+    
+    #Если подтекс полностью состоит из цифр, добавляем к ответу
     for string in lst:
         if string.isdigit():
             

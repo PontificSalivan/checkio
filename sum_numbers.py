@@ -5,7 +5,7 @@ def sum_numbers(text: str) -> int:
 
     #Разбиваемт текст на подтексты, основываясь на пробелах
     for char in text:
-        if char == ' ':
+        if char.isspace():
             lst.append(string)
             string = ''
         else:

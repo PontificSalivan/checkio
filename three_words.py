@@ -11,15 +11,15 @@ def checkio(words: str) -> bool:
         else:
             string += ''.join(char)
 
-    lst.append(string)
-
+    lst.append(string) # последняя подстрока, которая не была добавлена
+    
     for string in lst:
-        if string.isdigit():   
+        if string.isdigit():   # проверка на цифру
             gate = 0
         else:
             gate += 1
 
-        if gate == 3:
+        if gate == 3:       
             return True
 
     return False

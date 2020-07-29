@@ -3,17 +3,15 @@ def backward_string_by_word(text: str) -> str:
     string = ''
  
     for char in text:
-        if char.isspace():
-            answer += ''.join(string[::-1] + ' ')
+        if char.isspace(): # проверка на пробел
+            answer += ''.join(string[::-1] + ' ') # реверсируем строку и добавляем пробел
             string = ''
         else:
             string += ''.join(char)
 
-    answer += ''.join(string[::-1] + ' ') 
+    answer += ''.join(string[::-1] + ' ') # добавляем последнюю строку
 
-    answer = answer[:len(answer)-1]
-    return answer
-
+    return answer[:len(answer)-1] # выводим строку с удалением последнего символа - пробела
 
 if __name__ == '__main__':
 

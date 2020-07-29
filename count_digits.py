@@ -1,8 +1,10 @@
 def count_digits(text: str) -> int:
+
     answer = 0
+
     for char in text:
-        if char.isdigit():
-            answer += 1
+        if char.isdigit(): # если символ является цифрой
+            answer += 1 # добавляем к ответу
     return answer
 
 

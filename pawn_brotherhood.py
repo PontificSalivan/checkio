@@ -1,7 +1,8 @@
 def defence_pawns(char):
 
-    previous_line_pawn = str(int(char[1])-1)
-
+    previous_line_pawn = str(int(char[1])-1) # пешку защищают пешки с линии ниже, ее мы и будем выводить
+    
+    # проходка по всем диагоналям для каждой буквы
     if char[0] == 'a':
         return ('b' + previous_line_pawn),('z' + previous_line_pawn)
     elif char[0] == 'b':
@@ -23,10 +24,11 @@ def defence_pawns(char):
 
 def safe_pawns(pawns: set) -> int:
     answer = 0
+
     for pawn in pawns:
-        if pawn[1] != '1':
-            defence_pawns_lst = defence_pawns(pawn)
-            if defence_pawns_lst[0] in pawns or defence_pawns_lst[1] in pawns :
+        if pawn[1] != '1': # проверка на всякий случай, так как пешку на 1 линии никто не может защитить 
+            defence_pawns_lst = defence_pawns(pawn) # для текущей пешки загружаем ее возможных защитников
+            if defence_pawns_lst[0] in pawns or defence_pawns_lst[1] in pawns : # если они есть в вводе увеличиваем ответ
                 answer += 1
     
     return answer

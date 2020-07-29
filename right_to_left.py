@@ -1,9 +1,12 @@
 def left_join(phrases: tuple) -> str:
+
     answer = ''
+
     for string in phrases:
-        string = string.replace("right", "left")
-        answer += ''.join(string + ',' ) 
-    answer = answer[:len(answer)-1] 
+        string = string.replace("right", "left") # заменяем слово right на left
+        answer += ''.join(string + ',' ) # добавляем разделитель в виде запятой
+
+    answer = answer[:len(answer)-1] # удаляем последнюю запятую 
     return answer
 
 if __name__ == '__main__':

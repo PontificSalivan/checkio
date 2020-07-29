@@ -5,13 +5,14 @@ def bigger_price(limit: int, data: list) -> list:
     answer = list()
 
     for name in data:
-        sets = [name.get("price"),name.get("name")]
-        lst.append(sets)
+        sets = [name.get("price"),name.get("name")] # создаем пары значений price и name 
+        lst.append(sets) # создаем массив массивов
 
-    lst.sort()
+    lst.sort() # сортируем его 
 
     for i in range(limit):
-        d = {"name": lst[len(lst)-1-i][1], "price": lst[len(lst)-1-i][0]}
+        # так как мы знаем, где стоят значения price и name, то загружаем их в словарь
+        d = {"name": lst[len(lst)-1-i][1], "price": lst[len(lst)-1-i][0]} 
         answer.append(d)
     
     return answer

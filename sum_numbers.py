@@ -3,15 +3,10 @@ def sum_numbers(text: str) -> int:
     string = ''
     lst = list()
 
-    #Разбиваемт текст на подтексты, основываясь на пробелах
-    for char in text:
-        if char.isspace():
-            lst.append(string)
-            string = ''
-        else:
-            string += ''.join(char)
+    #Погружаем слова в массив
+    for letter in text.split():
+        lst.append(letter)
         
-    lst.append(string)
     
     #Если подтекс полностью состоит из цифр, добавляем к ответу
     for string in lst:

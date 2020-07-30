@@ -3,16 +3,10 @@ def checkio(words: str) -> bool:
     string = ''
     lst = list()
 
-    #Разбиваемт текст на подтексты, основываясь на пробелах
-    for char in words:
-        if char.isspace():
-            lst.append(string)
-            string = ''
-        else:
-            string += ''.join(char)
+    #Погружаем слова в массив
+    for letter in text.split():
+        lst.append(letter)
 
-    lst.append(string) # последняя подстрока, которая не была добавлена
-    
     for string in lst:
         if string.isdigit():   # проверка на цифру
             gate = 0

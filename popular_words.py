@@ -8,15 +8,9 @@ def popular_words(text: str, words: list) -> dict:
     lst = []
     answer = []
 
-    #Разбиваемт текст на подтексты, основываясь на пробелах
-    for char in text:
-        if char.isspace():
-            lst.append(string)
-            string = ''
-        else:
-            string += ''.join(char)
-
-    lst.append(string)
+    #Погружаем слова в массив
+    for letter in text.split():
+        lst.append(letter)
     
     # если элемент есть в данных по заданию словах, то загружаем его в массив ответов - answer 
     for elem in lst: 

@@ -1,26 +1,5 @@
-def defence_pawns(char):
-
-    previous_line_pawn = str(int(char[1])-1) # пешку защищают пешки с линии ниже, ее мы и будем выводить
-    
-    # проходка по всем диагоналям для каждой буквы
-    if char[0] == 'a':
-        return ('b' + previous_line_pawn),('z' + previous_line_pawn)
-    elif char[0] == 'b':
-        return ('a' + previous_line_pawn),('c' + previous_line_pawn)
-    elif char[0] == 'c':
-        return ('b' + previous_line_pawn),('d' + previous_line_pawn)
-    elif char[0] == 'd':
-        return ('c' + previous_line_pawn),('e' + previous_line_pawn)
-    elif char[0] == 'e':
-        return ('d' + previous_line_pawn),('f' + previous_line_pawn)
-    elif char[0] == 'f':
-        return ('e' + previous_line_pawn),('g' + previous_line_pawn)
-    elif char[0] == 'g':
-        return ('f' + previous_line_pawn),('h' + previous_line_pawn)
-    else:
-        return ('g' + previous_line_pawn),('z' + previous_line_pawn)
-
-
+def defence_pawns(char): # определение двух защитников 
+    return (chr(ord(char[0])+1) + str(int(char[1])-1)),(chr(ord(char[0])-1) + str(int(char[1])-1))
 
 def safe_pawns(pawns: set) -> int:
     answer = 0

@@ -1,8 +1,8 @@
+from typing import Iterable
 
 def replace_last(items: list) -> Iterable:
-    lst=[]
-    lst.append(items.pop())
-    return lst.extend(items)
+    
+    return  [items.pop()] + items if len(items) > 1 else items
 
 
 if __name__ == '__main__':

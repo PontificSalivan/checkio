@@ -4,7 +4,7 @@ def checkio(words: str) -> bool:
     lst = list()
 
     #Погружаем слова в массив
-    for letter in text.split():
+    for letter in words.split():
         lst.append(letter)
 
     for string in lst:
